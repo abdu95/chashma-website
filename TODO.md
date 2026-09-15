@@ -7,8 +7,6 @@
 - [ ] Visible "sample report" label on the hero readout mockup — right
       now "this is an example" only exists in an `aria-label`, so sighted
       visitors have no indication the 87%/9-of-11 numbers are illustrative
-- [ ] Skip-to-content link for keyboard/screen-reader users (competitor
-      ishtopchi.uz has one, we don't)
 - [ ] Security headers (CSP, X-Content-Type-Options, X-Frame-Options,
       Referrer-Policy, Permissions-Policy) — easy to add via Cloudflare,
       currently missing entirely
