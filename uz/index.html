@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<!-- HEAD -->
+<html lang="uz">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#ffffff" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="icon" href="/favicon-32x32.png" sizes="32x32" type="image/png" />
+<link rel="icon" href="/favicon-16x16.png" sizes="16x16" type="image/png" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<title>Accepted AI — rezyume tahlili, ish qidiruv va arizalarni kuzatish</title>
+<meta name="description" content="Moslik balingiz va aniq tuzatishlarni oling, real vakansiyalarni qidiring va har bir arizangizni kuzating — barchasi bitta Telegram ilovasida. Boshlash bepul." />
+<link rel="canonical" href="https://chashma.uz/uz/" />
+<link rel="alternate" hreflang="en" href="https://chashma.uz/" />
+<link rel="alternate" hreflang="ru" href="https://chashma.uz/ru/" />
+<link rel="alternate" hreflang="uz" href="https://chashma.uz/uz/" />
+<link rel="alternate" hreflang="x-default" href="https://chashma.uz/" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/style.css?v=2ceb9e95" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Accepted AI",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Telegram",
+  "url": "https://chashma.uz/uz/",
+  "description": "Moslik balingiz va aniq tuzatishlarni oling, real vakansiyalarni qidiring va har bir arizangizni kuzating — barchasi bitta Telegram ilovasida. Boshlash bepul.",
+  "inLanguage": "uz",
+  "offers": [
+    { "@type": "Offer", "price": "0", "priceCurrency": "UZS", "description": "2 ta bepul rezyume-vakansiya tahlili" },
+    { "@type": "Offer", "price": "10000", "priceCurrency": "UZS", "description": "Ishlatganingiz uchun to‘lov, har bir tahlil uchun" }
+  ]
+}
+</script>
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <div class="brand"><span class="dot"></span>ACCEPTED&nbsp;AI</div>
+      <div class="nav-actions">
+        <div class="lang-switch" role="group" aria-label="Language">
+          <a href="/">EN</a>
+          <a href="/ru/">RU</a>
+          <a href="/uz/" class="active">UZ</a>
+        </div>
+        <a class="btn small" data-bot href="https://t.me/scan_cv_bot?start=chashma_uz" aria-label="AcceptedAI’ni Telegram’da ochish"><span>AcceptedAI’ni ochish</span>
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.9 4.3 18.7 19.4c-.24 1.06-.87 1.32-1.76.82l-4.87-3.59-2.35 2.26c-.26.26-.48.48-.98.48l.35-4.96 9.03-8.16c.39-.35-.09-.55-.6-.2L5.62 12.9l-4.8-1.5c-1.04-.33-1.06-1.04.22-1.54l18.77-7.23c.87-.32 1.63.2 1.35 1.67Z"/></svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" style="border-top:none">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="eyebrow reveal">Rezyume tahlili · ish qidiruv · arizalar nazorati</p>
+        <h1 class="reveal">Rezyumeingiz <em>vakansiyaga mos keladimi</em>, ariza berishdan oldin bilib oling.</h1>
+        <p class="lede reveal">Moslik balingiz va aniq tuzatishlarni oling, real vakansiyalarni qidiring va har bir arizangizni kuzating — barchasi bitta Telegram ilovasida. Boshlash bepul.</p>
+        <div class="cta-row reveal">
+          <a class="btn" data-bot href="https://t.me/scan_cv_bot?start=chashma_uz"><span>AcceptedAI’ni Telegram’da ochish</span>
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.9 4.3 18.7 19.4c-.24 1.06-.87 1.32-1.76.82l-4.87-3.59-2.35 2.26c-.26.26-.48.48-.98.48l.35-4.96 9.03-8.16c.39-.35-.09-.55-.6-.2L5.62 12.9l-4.8-1.5c-1.04-.33-1.06-1.04.22-1.54l18.77-7.23c.87-.32 1.63.2 1.35 1.67Z"/></svg>
+          </a>
+          <span class="cta-note">2 ta bepul tahlil · UZ / RU / EN</span>
+        </div>
+      </div>
+
+      <!-- SIGNATURE: analysis readout -->
+      <div class="readout reveal" aria-label="Moslik tahlili namunasi">
+        <div class="readout-bar">
+          <span class="rd"></span><span class="rd"></span><span class="rd"></span>
+          <span>tahlil</span><span class="tag" id="statusTag" data-complete-text="tayyor">ishlanmoqda…</span>
+        </div>
+        <div class="readout-body">
+          <div class="rd-label">moslik balli</div>
+          <div class="score"><span id="scoreNum">0</span>%</div>
+          <div class="track"><div class="fill" id="fill"></div></div>
+          <div class="rd-rows">
+            <div class="rd-row"><span><span class="mark">✓</span><span>mos ko‘nikmalar</span></span><b>9 / 11</b></div>
+            <div class="rd-row"><span><span class="mark">!</span><span>yopish kerak bo‘lgan bo‘shliqlar</span></span><b>2</b></div>
+            <div class="rd-row"><span><span class="mark">→</span><span>hisobotdagi tuzatishlar</span></span><b>3</b></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section>
+    <div class="wrap sec-pad">
+      <div class="sec-head reveal">
+        <p class="eyebrow">qanday ishlaydi</p>
+        <h2>Uch qadam, taxminan ikki daqiqa.</h2>
+      </div>
+      <div class="steps reveal">
+        <div class="step">
+          <div class="step-num">01</div>
+          <h3>Ilovani oching</h3>
+          <p>Telegram’da bir marta bosing — o‘rnatish yoki alohida akkaunt kerak emas.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">02</div>
+          <h3>Rezyumeingizni yuklang</h3>
+          <p>Bir marta. Har bir vakansiya uchun qayta ishlating.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">03</div>
+          <h3>Qidiring, tahlil qiling, kuzating</h3>
+          <p>Real vakansiyalarni toping, moslik balingiz va tuzatishlarni oling, har bir arizangizni bir joyda kuzating.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLANS -->
+  <section>
+    <div class="wrap sec-pad">
+      <div class="sec-head reveal">
+        <p class="eyebrow">narxlar</p>
+        <h2>Bepul boshlang. Faqat ishlatgan tahlillaringiz uchun to‘lang.</h2>
+      </div>
+      <div class="plans">
+        <div class="plan reveal">
+          <div class="plan-tag">Bepul</div>
+          <div class="plan-price">0 <small>/ boshlash uchun</small></div>
+          <ul>
+            <li>2 ta bepul rezyume-vakansiya tahlili</li>
+            <li>Cheksiz ish qidiruv va arizalarni kuzatish</li>
+            <li>O‘zbek, rus va ingliz tillarida ishlaydi</li>
+          </ul>
+          <a class="btn ghost" data-bot href="https://t.me/scan_cv_bot?start=chashma_uz">Bepul sinab ko‘rish</a>
+        </div>
+        <div class="plan paid reveal">
+          <div class="plan-tag">Ishlatganingiz uchun to‘lov</div>
+          <div class="plan-price">10 000 <small>UZS / tahlil</small></div>
+          <ul>
+            <li>Aynan kerakli miqdorda tahlil sotib oling — obuna shart emas</li>
+            <li>To‘liq reja: qayta yozilgan rezyume, telefon suhbatiga tayyorgarlik va ehtimoliy texnik savollar</li>
+            <li>Har bir natija tekshiruvlar tarixingizda saqlanadi</li>
+          </ul>
+          <a class="btn" data-bot href="https://t.me/scan_cv_bot?start=chashma_uz">AcceptedAI’ni Telegram’da ochish</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOUNDER / FUNNEL -->
+  <section>
+    <div class="wrap sec-pad">
+      <div class="founder-grid">
+        <div class="reveal">
+          <h2 class="eyebrow">sabab</h2>
+          <p class="founder-quote">Buni o‘zimning ish qidirish tajribamdan so‘ng yaratdim. <span>100 ta ariza, 30 ta telefon skrining, 10 ta texnik intervyu, 2 ta taklif.</span> Accepted AI — men o‘shanda xohlagan tizim.</p>
+          <p class="founder-by">— asoschi, Toshkent</p>
+        </div>
+        <div class="reveal">
+          <h2 class="eyebrow">dalil — o‘zimning funnelim</h2>
+          <div class="fbars">
+            <div class="fbar-track"><div class="fbar fbar--t1" style="--fw:100%"><span class="fbar-num">100</span></div></div>
+            <div class="fbar-meta">ta ariza</div>
+            <div class="fbar-track"><div class="fbar fbar--t2" style="--fw:30%"><span class="fbar-num">30</span></div></div>
+            <div class="fbar-meta">ta telefon skrining</div>
+            <div class="fbar-track"><div class="fbar fbar--t3" style="--fw:10%"><span class="fbar-num">10</span></div></div>
+            <div class="fbar-meta">ta texnik intervyu</div>
+            <div class="fbar-track"><div class="fbar fbar--t4" style="--fw:2%"><span class="fbar-num">2</span></div></div>
+            <div class="fbar-meta">ta taklif</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final">
+    <div class="wrap">
+      <h2 class="reveal">Mos kelasizmi yoki yo‘qligini taxmin qilishni bas qiling.</h2>
+      <p class="reveal">Real vakansiyalarni qidiring, moslikni tekshiring va ishonch bilan ariza bering — boshlash bepul.</p>
+      <div class="reveal final-cta">
+        <a class="btn" data-bot href="https://t.me/scan_cv_bot?start=chashma_uz"><span>AcceptedAI’ni Telegram’da ochish</span>
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.9 4.3 18.7 19.4c-.24 1.06-.87 1.32-1.76.82l-4.87-3.59-2.35 2.26c-.26.26-.48.48-.98.48l.35-4.96 9.03-8.16c.39-.35-.09-.55-.6-.2L5.62 12.9l-4.8-1.5c-1.04-.33-1.06-1.04.22-1.54l18.77-7.23c.87-.32 1.63.2 1.35 1.67Z"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="wrap foot-inner">
+      <div class="brand"><span class="dot"></span>ACCEPTED&nbsp;AI</div>
+      <div class="foot-meta">Toshkentda yaratilgan · <span id="yr"></span></div>
+    </div>
+  </footer>
+
+<script src="/script.js?v=3e2729fc"></script>
+</body>
+</html>

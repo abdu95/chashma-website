@@ -1,0 +1,7 @@
+{
+  "name": "chashma-website",
+  "private": true,
+  "scripts": {
+    "build": "node src/build.js ."
+  }
+}
