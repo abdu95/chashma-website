@@ -1,0 +1,11 @@
+{
+  // Tells Cloudflare's deploy step where the built static site lives.
+  // Without this file, wrangler auto-detects "." (repo root) as the
+  // assets directory, which sweeps in node_modules and its own 148 MB
+  // workerd binary as a "site asset" and fails the deploy.
+  "name": "chashma-website",
+  "compatibility_date": "2026-09-15",
+  "assets": {
+    "directory": "dist"
+  }
+}
