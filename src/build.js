@@ -3,6 +3,8 @@ const path = require('path');
 const crypto = require('crypto');
 
 const SRC = __dirname;
+const STATIC_FILES = ['style.css', 'script.js', 'robots.txt', 'sitemap.xml'];
+const STATIC_DIRS = ['icons'];
 
 function hashFile(p) {
   return crypto.createHash('md5').update(fs.readFileSync(p)).digest('hex').slice(0, 8);
@@ -60,24 +62,40 @@ function verifyLocalePages(pages) {
   return problems;
 }
 
-function checkAssetsExist(projectRoot, html, label, problems) {
+function checkAssetsExist(distDir, html, label, problems) {
   const refs = [...html.matchAll(/(?:href|src)="\/([^"?]+)(?:\?[^"]*)?"/g)].map(m => m[1]);
   for (const ref of refs) {
-    const full = path.join(projectRoot, ref);
+    const basename = ref.split('/').pop();
+    if (!basename || !basename.includes('.')) continue; // page route (e.g. "ru/"), not a static file
+    const full = path.join(distDir, ref);
     if (!fs.existsSync(full)) {
       problems.push(`${label}: references missing local asset "/${ref}"`);
     }
   }
 }
 
+function copyStaticAssets(projectRoot, distDir) {
+  for (const f of STATIC_FILES) {
+    fs.copyFileSync(path.join(projectRoot, f), path.join(distDir, f));
+  }
+  for (const d of STATIC_DIRS) {
+    fs.cpSync(path.join(projectRoot, d), path.join(distDir, d), { recursive: true });
+  }
+}
+
 function build(projectRoot) {
+  const distDir = path.join(projectRoot, 'dist');
+  fs.rmSync(distDir, { recursive: true, force: true });
+  fs.mkdirSync(distDir, { recursive: true });
+  copyStaticAssets(projectRoot, distDir);
+
   const cssVersion = hashFile(path.join(projectRoot, 'style.css'));
   const jsVersion = hashFile(path.join(projectRoot, 'script.js'));
 
   const localeOutputs = {
-    en: path.join(projectRoot, 'index.html'),
-    ru: path.join(projectRoot, 'ru', 'index.html'),
-    uz: path.join(projectRoot, 'uz', 'index.html'),
+    en: path.join(distDir, 'index.html'),
+    ru: path.join(distDir, 'ru', 'index.html'),
+    uz: path.join(distDir, 'uz', 'index.html'),
   };
 
   const rendered = [];
@@ -94,11 +112,11 @@ function build(projectRoot) {
     { ASSET_CSS_VERSION: cssVersion },
     '404 page'
   );
-  const page404Out = { label: '404', outPath: path.join(projectRoot, '404.html'), html: page404 };
+  const page404Out = { label: '404', outPath: path.join(distDir, '404.html'), html: page404 };
 
   const problems = verifyLocalePages(rendered);
   for (const p of [...rendered, page404Out]) {
-    checkAssetsExist(projectRoot, p.html, p.label, problems);
+    checkAssetsExist(distDir, p.html, p.label, problems);
   }
 
   if (problems.length) {
@@ -111,7 +129,7 @@ function build(projectRoot) {
     fs.writeFileSync(outPath, html);
     console.log('Wrote', outPath, `(${label})`);
   }
-  console.log('Build verification passed.');
+  console.log('Build verification passed. Output in', distDir);
 }
 
 const target = process.argv[2];
