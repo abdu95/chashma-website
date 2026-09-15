@@ -40,3 +40,13 @@
 - [ ] Social media presence (Telegram channel / Instagram) linked in the
       footer, if such accounts exist or are planned — both competitors
       show this, we currently have none
+- [ ] Blog / articles section targeting long-tail, intent-matched SEO
+      keywords ("rezyume tahlili", "CV tekshirish onlayn", "резюме под
+      вакансию проверить") instead of chasing broad, listing-dominated
+      terms like "ish topish" / "найти работу" — those are owned by
+      mehnat.uz (the government labor exchange, osonish.uz) and
+      well-funded job-board apps; a CV-analysis landing page won't
+      realistically outrank listing sites for a pure job-search query.
+      Idea borrowed from osonish.uz's "useful articles" section
+      (interview tips, CV-writing guide) — same content angle, aimed at
+      keywords people search when they actually want *this* product
