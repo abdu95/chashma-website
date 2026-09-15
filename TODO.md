@@ -1,33 +1,5 @@
 # TODO
 
-Tracking what's left from the site review. Done items are kept (checked)
-so there's a record of what's already been addressed — don't re-open them
-without a reason.
-
-## Done
-
-- [x] Fix low-contrast gray text (`--ink-3`) failing WCAG AA
-- [x] Fix dead CTA buttons (`href="#"` with no JS fallback)
-- [x] Per-language Telegram bot attribution (`start=chashma_en/ru/uz`)
-- [x] Restore mobile nav CTA (was `display:none` below 860px)
-- [x] Fix funnel bar rendering bug on narrow/mobile screens
-- [x] Add `robots.txt`
-- [x] Add `sitemap.xml`
-- [x] Add `theme-color` meta tag
-- [x] Add JSON-LD structured data (SoftwareApplication)
-- [x] De-duplicate the 3 HTML files into `src/template.html` + per-locale
-      content JSON, built via `npm run build`
-- [x] Minor cleanup: inline styles → CSS classes, founder section heading
-      hierarchy, cache-busted asset URLs, custom `404.html`
-- [x] Favicon + apple-touch-icon
-- [x] Move icon assets into `icons/`
-- [x] Build-time verification (`src/build.js` fails loudly on missing
-      content keys, dead `href="#"` links, unresolved placeholders, or
-      structural drift between locale pages)
-- [x] Git repo created and pushed (github.com/abdu95/chashma-website)
-
-## Left to do
-
 ### Quick
 
 - [ ] Open Graph / Twitter Card meta tags + a share image (currently
