@@ -28,7 +28,7 @@ var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   function layout(){
     order.forEach(function(imgIndex, pos){
       var img = imgs[imgIndex];
-      img.style.setProperty('--ss-y', (pos * 7) + 'px');
+      img.style.setProperty('--ss-x', (pos * 10) + 'px');
       img.style.setProperty('--ss-scale', 1 - pos * 0.035);
       img.style.setProperty('--ss-z', imgs.length - pos);
       img.style.setProperty('--ss-op', 1);
