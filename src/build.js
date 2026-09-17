@@ -4,7 +4,7 @@ const crypto = require('crypto');
 
 const SRC = __dirname;
 const STATIC_FILES = ['style.css', 'script.js', 'robots.txt', 'sitemap.xml'];
-const STATIC_DIRS = ['assets', 'avatars'];
+const STATIC_DIRS = ['assets'];
 
 function hashFile(p) {
   return crypto.createHash('md5').update(fs.readFileSync(p)).digest('hex').slice(0, 8);
