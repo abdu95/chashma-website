@@ -17,6 +17,31 @@
 
 ### Needs a decision or content from Abdumalik, not just code
 
+- [ ] Cut or trim the "How it works" section — it now overlaps with the
+      hero screenshot carousel's per-screen captions ("Check ATS score,"
+      "Search vacancy," "Track job applications," "Store many CVs").
+      Full 6-section review:
+        1. Hero — headline + value prop + primary CTA + screenshot carousel
+        2. How it works — 3 steps: open the app, upload your CV,
+           search/analyze/track
+        3. Plans — free vs. pay-as-you-go (distinct, necessary)
+        4. Founder/Funnel — founder's quote + his personal funnel stats
+           (100 → 30 → 10 → 2)
+        5. Testimonials — 3 real user quotes, carousel
+        6. Final CTA — closing headline + CTA button
+      The real overlap is #1 and #2: "How it works" step 3 ("Find real
+      openings, get your match score and fixes, and track every
+      application in one place") just restates the carousel's 4 captions
+      as one sentence — the same pitch told twice, once as actual product
+      screens (more convincing) and once as a plain text list right below
+      it. Recommend cutting "How it works" entirely, or trimming it down
+      to just onboarding mechanics ("tap once in Telegram, no download,
+      reuse your CV for every job") and dropping the feature-listing part.
+      Founder/Funnel + Testimonials (#4/#5) are NOT redundant despite being
+      adjacent — different trust signal (founder's own story vs. third-party
+      validation), already different visual treatment — leave both. Hero
+      CTA + Final CTA repeating the pitch is intentional bookending for a
+      single-page site — keep as-is.
 - [ ] Resolve the Chashma (domain/brand) vs Accepted AI (on-page product
       name) mismatch — nothing on the page currently ties the two together
 - [ ] Privacy policy / terms — needs actual data-handling practices
