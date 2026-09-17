@@ -52,6 +52,37 @@ var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   }
 })();
 
+/* testimonials carousel */
+(function(){
+  var container = document.querySelector('.testimonials-carousel');
+  if(!container) return;
+  var slides = Array.prototype.slice.call(container.querySelectorAll('.t-slide'));
+  if(slides.length < 2) return;
+  var dotsWrap = container.querySelector('.t-dots');
+  var dotLabel = dotsWrap ? (dotsWrap.getAttribute('data-label') || 'Testimonial') : 'Testimonial';
+
+  function show(index){
+    slides.forEach(function(slide, i){ slide.classList.toggle('is-active', i === index); });
+    if(dotsWrap){
+      Array.prototype.forEach.call(dotsWrap.children, function(dot, i){
+        dot.classList.toggle('is-active', i === index);
+        dot.setAttribute('aria-current', i === index ? 'true' : 'false');
+      });
+    }
+  }
+
+  if(dotsWrap){
+    slides.forEach(function(_, i){
+      var dot = document.createElement('button');
+      dot.type = 'button';
+      dot.setAttribute('aria-label', dotLabel + ' ' + (i + 1));
+      dot.addEventListener('click', function(){ show(i); });
+      dotsWrap.appendChild(dot);
+    });
+  }
+  show(0);
+})();
+
 /* scroll reveal */
 (function(){
   var els=document.querySelectorAll('.reveal');
