@@ -81,10 +81,16 @@
 {{hero_ss_3}}
 {{hero_ss_4}}
         </div>
+        <div class="ss-caption">
+{{hero_ss_prev}}
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <span class="ss-title"></span>
 {{hero_ss_next}}
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
-        </button>
-        <div class="ss-dots" aria-hidden="true"></div>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+        </div>
+        <p class="ss-desc"></p>
       </div>
     </div>
   </section>
@@ -181,38 +187,46 @@
 {{testimonials_1}}
 {{testimonials_2}}
       </div>
-      <div class="testimonials-carousel reveal">
-        <div class="testimonial t-slide is-active">
+      <div class="testimonials-row">
+{{testimonials_prev}}
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <div class="testimonials-carousel reveal">
+          <div class="testimonial t-slide is-active">
 {{testimonials_3}}
-          <div class="t-author">
-            <img class="t-avatar" src="/assets/avatars/irodakhon-umurzakova.jpg" alt="" width="40" height="40" loading="lazy" decoding="async" />
-            <div>
+            <div class="t-author">
+              <img class="t-avatar" src="/assets/avatars/irodakhon-umurzakova.jpg" alt="" width="40" height="40" loading="lazy" decoding="async" />
+              <div>
 {{testimonials_4}}
 {{testimonials_5}}
+              </div>
             </div>
           </div>
-        </div>
-        <div class="testimonial t-slide">
+          <div class="testimonial t-slide">
 {{testimonials_6}}
-          <div class="t-author">
-            <img class="t-avatar" src="/assets/avatars/ravshan-suyunbekov.jpg" alt="" width="40" height="40" loading="lazy" decoding="async" />
-            <div>
+            <div class="t-author">
+              <img class="t-avatar" src="/assets/avatars/ravshan-suyunbekov.jpg" alt="" width="40" height="40" loading="lazy" decoding="async" />
+              <div>
 {{testimonials_7}}
 {{testimonials_8}}
+              </div>
             </div>
           </div>
-        </div>
-        <div class="testimonial t-slide">
+          <div class="testimonial t-slide">
 {{testimonials_9}}
-          <div class="t-author">
-            <div class="t-avatar t-avatar--initials" aria-hidden="true">SA</div>
-            <div>
+            <div class="t-author">
+              <div class="t-avatar t-avatar--initials" aria-hidden="true">SA</div>
+              <div>
 {{testimonials_10}}
 {{testimonials_11}}
+              </div>
             </div>
           </div>
+          <div class="t-dots" data-label="{{testimonials_dot_label}}"></div>
         </div>
-        <div class="t-dots" data-label="{{testimonials_dot_label}}"></div>
+{{testimonials_next}}
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
       </div>
     </div>
   </section>
