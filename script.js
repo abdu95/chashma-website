@@ -10,23 +10,46 @@ document.getElementById('yr').textContent = new Date().getFullYear();
 
 var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-/* hero score count-up */
+/* hero screenshot carousel */
 (function(){
-  var target = 87, num = document.getElementById('scoreNum'),
-      fill = document.getElementById('fill'), tag = document.getElementById('statusTag');
-  var completeText = tag ? tag.getAttribute('data-complete-text') : '';
-  function done(){ if(tag) tag.textContent = completeText; }
-  if(reduce){ num.textContent = target; fill.style.width = target+'%'; done(); return; }
-  setTimeout(function(){ fill.style.width = target+'%'; }, 250);
-  var start=null, dur=1100;
-  function step(t){
-    if(!start) start=t;
-    var p=Math.min((t-start)/dur,1);
-    var e=1-Math.pow(1-p,3);
-    num.textContent=Math.round(e*target);
-    if(p<1){requestAnimationFrame(step);} else {done();}
+  var stack = document.querySelector('.ss-stack');
+  if(!stack) return;
+  var imgs = Array.prototype.slice.call(stack.querySelectorAll('.ss-img'));
+  if(!imgs.length) return;
+  var carousel = stack.closest('.ss-carousel');
+  var nextBtn = carousel ? carousel.querySelector('.ss-next') : null;
+  var dotsWrap = carousel ? carousel.querySelector('.ss-dots') : null;
+  var order = imgs.map(function(_, i){ return i; });
+
+  if(dotsWrap){
+    imgs.forEach(function(){ dotsWrap.appendChild(document.createElement('span')); });
   }
-  setTimeout(function(){ requestAnimationFrame(step); }, 250);
+
+  function layout(){
+    order.forEach(function(imgIndex, pos){
+      var img = imgs[imgIndex];
+      img.style.setProperty('--ss-y', (pos * 10) + 'px');
+      img.style.setProperty('--ss-scale', 1 - pos * 0.045);
+      img.style.setProperty('--ss-rot', (pos === 0 ? 0 : (pos % 2 === 0 ? -1 : 1) * (2 + pos)) + 'deg');
+      img.style.setProperty('--ss-z', imgs.length - pos);
+      img.style.setProperty('--ss-op', 1);
+      img.setAttribute('aria-hidden', pos === 0 ? 'false' : 'true');
+      img.classList.toggle('is-front', pos === 0);
+    });
+    if(dotsWrap){
+      Array.prototype.forEach.call(dotsWrap.children, function(dot, i){
+        dot.classList.toggle('is-active', i === order[0]);
+      });
+    }
+  }
+  layout();
+
+  if(nextBtn){
+    nextBtn.addEventListener('click', function(){
+      order.push(order.shift());
+      layout();
+    });
+  }
 })();
 
 /* scroll reveal */
