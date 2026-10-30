@@ -298,3 +298,4 @@ footer{border-top:1px solid var(--line);}
 .legal strong{color:var(--ink);}
 .legal a{text-decoration:underline;text-underline-offset:3px;}
 .legal .legal-links{margin-top:40px;font-family:var(--mono);font-size:13px;}
+.legal .legal-lang{font-family:var(--mono);font-size:13px;margin-bottom:24px;}

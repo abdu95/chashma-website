@@ -114,12 +114,22 @@ function build(projectRoot) {
   );
   const page404Out = { label: '404', outPath: path.join(distDir, '404.html'), html: page404 };
 
-  // English-only legal pages, served at /privacy and /terms.
-  const legalPages = ['privacy', 'terms'].map(name => ({
-    label: name,
-    outPath: path.join(distDir, `${name}.html`),
-    html: render(path.join(SRC, `${name}.html`), { ASSET_CSS_VERSION: cssVersion }, `${name} page`),
-  }));
+  // Legal pages: /privacy and /terms (English), /ru/... and /uz/... translations.
+  // Sources: src/privacy.html, src/privacy.ru.html, src/privacy.uz.html (same for terms).
+  const legalPages = [];
+  for (const name of ['privacy', 'terms']) {
+    for (const locale of ['en', 'ru', 'uz']) {
+      const srcFile = locale === 'en' ? `${name}.html` : `${name}.${locale}.html`;
+      const outPath = locale === 'en'
+        ? path.join(distDir, `${name}.html`)
+        : path.join(distDir, locale, `${name}.html`);
+      legalPages.push({
+        label: `${name} (${locale})`,
+        outPath,
+        html: render(path.join(SRC, srcFile), { ASSET_CSS_VERSION: cssVersion }, `${name} page (${locale})`),
+      });
+    }
+  }
 
   const problems = verifyLocalePages(rendered);
   for (const p of [...rendered, page404Out, ...legalPages]) {
