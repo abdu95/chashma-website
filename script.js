@@ -6,6 +6,7 @@ var pageLang = document.documentElement.lang || 'en';
 var BOT_URL = "https://t.me/" + BOT_USERNAME + "?start=chashma_" + pageLang;
 
 document.querySelectorAll('[data-bot]').forEach(function(a){ a.setAttribute('href', BOT_URL); });
+document.querySelectorAll('[data-web]').forEach(function(a){ a.setAttribute('href', 'https://app.chashma.uz/?lang=' + pageLang); });
 document.getElementById('yr').textContent = new Date().getFullYear();
 
 var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
