@@ -114,8 +114,15 @@ function build(projectRoot) {
   );
   const page404Out = { label: '404', outPath: path.join(distDir, '404.html'), html: page404 };
 
+  // English-only legal pages, served at /privacy and /terms.
+  const legalPages = ['privacy', 'terms'].map(name => ({
+    label: name,
+    outPath: path.join(distDir, `${name}.html`),
+    html: render(path.join(SRC, `${name}.html`), { ASSET_CSS_VERSION: cssVersion }, `${name} page`),
+  }));
+
   const problems = verifyLocalePages(rendered);
-  for (const p of [...rendered, page404Out]) {
+  for (const p of [...rendered, page404Out, ...legalPages]) {
     checkAssetsExist(distDir, p.html, p.label, problems);
   }
 
@@ -124,7 +131,7 @@ function build(projectRoot) {
     process.exit(1);
   }
 
-  for (const { outPath, html, label } of [...rendered, page404Out]) {
+  for (const { outPath, html, label } of [...rendered, page404Out, ...legalPages]) {
     fs.mkdirSync(path.dirname(outPath), { recursive: true });
     fs.writeFileSync(outPath, html);
     console.log('Wrote', outPath, `(${label})`);

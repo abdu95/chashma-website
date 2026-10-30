@@ -286,3 +286,15 @@ footer{border-top:1px solid var(--line);}
   .reveal{opacity:1;transform:none;transition:none;}
   .ss-img{transition:none;}
 }
+
+/* ============ LEGAL PAGES (privacy, terms) ============ */
+.legal{max-width:760px;padding-top:56px;padding-bottom:72px;}
+.legal h1{font-weight:700;font-size:clamp(32px,5vw,48px);line-height:1.05;letter-spacing:-.03em;margin:10px 0 24px;}
+.legal h2{font-weight:700;font-size:20px;letter-spacing:-.01em;margin:36px 0 10px;}
+.legal p,.legal li{color:var(--ink-2);font-size:16px;line-height:1.65;}
+.legal p{margin-bottom:12px;}
+.legal ul{padding-left:20px;margin-bottom:12px;}
+.legal li{margin-bottom:8px;}
+.legal strong{color:var(--ink);}
+.legal a{text-decoration:underline;text-underline-offset:3px;}
+.legal .legal-links{margin-top:40px;font-family:var(--mono);font-size:13px;}
